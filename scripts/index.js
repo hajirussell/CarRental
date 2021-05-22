@@ -15,7 +15,7 @@ function estimateTotalCostBtnClicked () {
     let numberOfDays = Number(numberOfDaysField.value);
 
 
-    let basicCarRentalCost = numberOfDays * 29.99;
+    let basicCarRentalCost = Number(numberOfDays * 29.99);
 
     let serviceAdditions = 0;
     
@@ -28,15 +28,15 @@ function estimateTotalCostBtnClicked () {
     
     //see if the gps checkbox is checked and hold onto that value
     //add cost ($2.95) if true
-    const gpsCheckbox = document.getElementById("gps)");
-    if (gpsCheckbox.checked == True) {
+    const gpsCheckbox = document.getElementById("gps");
+    if (gpsCheckbox.checked == true) {
         serviceAdditions += Number(numberOfDays * 2.95);
     }
 
     //see if the roadside assitance checkbox is checked and hold onto that value
     //add service cost ($2.95) if true
     const roadsideAssistanceCheckbox = document.getElementById("roadsideAssistance");
-    if (roadsideAssistanceCheckbox.checked == True) {
+    if (roadsideAssistanceCheckbox.checked == true) {
         serviceAdditions += Number(numberOfDays * 2.95);
     }
 
@@ -45,24 +45,27 @@ function estimateTotalCostBtnClicked () {
 
     let under25SurchargeFee;
     const yes25RadioBtn = document.getElementById("yes25");
-    if (yes25RadioBtn.checked == True) {
-        serviceAdditions += Number(basicCarRentalCost * .3)
+    if (yes25RadioBtn.checked == true) {
+        under25SurchargeFee = Number(basicCarRentalCost * .3);
+    }
+    else {
+        under25SurchargeFee = 0;
     }
 
     //calculate the values
-    let totalDueCost = basicCarRentalCost + serviceAdditions + under25Surcharge;
+    let totalDueCost = Number(basicCarRentalCost + serviceAdditions + under25SurchargeFee);
 
     //print all the values to the website
     const basicCarRentalTotalPara = document.getElementById("basicCarRentalTotal");
-    basicCarRentalTotalPara.innerHTML = basicCarRentalCost.toFixed(2);
+    basicCarRentalTotalPara.innerHTML = "Car Rental: $" + basicCarRentalCost.toFixed(2);
 
     const optionsTotalPara = document.getElementById("optionsTotal");
-    optionsTotalPara.innerHTML = serviceAdditions.toFixed(2);
+    optionsTotalPara.innerHTML = "Options: $" + serviceAdditions.toFixed(2);
 
-    const under25SurchargeField = document.getElementById("under25Surcharge");
-    under25SurchargePara.value = under25SurchargeFee.toFixed(2);
+    const under25SurchargePara = document.getElementById("under25Surcharge");
+    under25SurchargePara.innerHTML = "Under 25 Surcharge: $" + under25SurchargeFee.toFixed(2);
 
     const totalDuePara = document.getElementById("totalDue");
-    totalDuePara.innerHTML = totalDueCost.toFixed(2);
+    totalDuePara.innerHTML = "Total Due: $" + totalDueCost.toFixed(2);
 
 }

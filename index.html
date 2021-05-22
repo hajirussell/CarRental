@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+
+    <main>
+        <div class="container">
+            <h1>ACME Car Rental</h1>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        <label for="pickupDate">Pickup Date:</label>
+                        <input type="date" id="pickupDate">
+                    </p>
+                    <p>
+                        <label for="numberOfDays">Number of Days:</label>
+                        <input type="number" id="numberOfDays">
+                    </p>
+                    <p>OPTIONS</p>
+                    <p>
+                        <input type="checkbox" id="tollTag">
+                        <label for="tollTag">Electronic Toll Tag ($3.95/day)</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="gps">
+                        <label for="gps">GPS ($2.95/day)</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="roadsideAssistance">
+                        <label for="roadsideAssitance">Roadside Assitance ($2.95/day)</label>
+                    </p>
+                    <p>
+                        Under 25?
+                        <p>
+                            <label for="under25">No</label>
+                            <input type="radio" id="no25" name="age" value="No">
+                            <label for="under25">Yes</label>
+                            <input type="radio" id="yes25" name="age" value="Yes">
+                        </p>
+                    </p>
+                    <button type="submit" id="estimateTotalCostBtn">Estimate Total Cost</button>
+                    <p id="basicCarRentalTotal">
+
+                    </p>
+                    <p id="optionsTotal">
+
+                    </p>
+                    <p>
+                        <label for="under25Surcharge">Under 25 Surcharge</label>
+                        <input id="under25Surcharge" readonly>
+                    </p>
+                    <p id="totalDue">
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
